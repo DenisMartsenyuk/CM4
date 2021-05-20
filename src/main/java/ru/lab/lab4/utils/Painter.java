@@ -1,4 +1,4 @@
-package ru.lab.lab4;
+package ru.lab.lab4.utils;
 
 import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.XYChart;
@@ -8,7 +8,7 @@ import org.knowm.xchart.style.Styler;
 import ru.lab.lab4.entities.Points;
 
 public class Painter {
-    private XYChart chart;
+    private final XYChart chart;
 
     public Painter() {
         chart = new XYChartBuilder().width(600).height(400).title("Area Chart").xAxisTitle("X").yAxisTitle("Y").build();
