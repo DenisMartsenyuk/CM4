@@ -1,4 +1,4 @@
-package ru.lab.lab4;
+package trash;
 
 public class Point {
     private final double x;

@@ -2,13 +2,11 @@ package ru.lab.lab4.solutions;
 
 import ru.lab.lab4.Answer;
 import ru.lab.lab4.FunctionType;
-import ru.lab.lab4.Point;
-
-import java.util.ArrayList;
+import ru.lab.lab4.Points;
 
 public class SolutionLinear implements Solution {
     @Override
-    public Answer solve(ArrayList<Point> points) {
+    public Answer solve(Points points) {
         return null;
     }
 

@@ -1,8 +1,15 @@
 package ru.lab.lab4;
 
-import java.util.ArrayList;
+import ru.lab.lab4.functions.Function;
 
 public class Answer {
-    private FunctionType functionType;
-    private ArrayList<Double> coefficients;
+    private Function function;
+
+    public void setFunction(Function function) {
+        this.function = function;
+    }
+
+    public Function getFunction() {
+        return function;
+    }
 }

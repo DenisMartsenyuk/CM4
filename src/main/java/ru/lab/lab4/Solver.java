@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class Solver {
 
-    private Painter painter;
-    private ArrayList<Solution> solutions;
+    private final Painter painter;
+    private final ArrayList<Solution> solutions;
 
     public Solver() {
         painter = new Painter();
@@ -19,13 +19,16 @@ public class Solver {
         solutions.add(new SolutionPower());
     }
 
-    public void solve(ArrayList<Point> points) {
+    public void solve(Points points) {
+        painter.addPrimitive(points, "lol"); //имена давать
         for (Solution solution : solutions) {
             parseAnswer(solution.solve(points));
         }
+
+        painter.openGraph();
     }
 
     private void parseAnswer(Answer answer) {
-        //todo отрисовать 
+        //todo отрисовать
     }
 }
