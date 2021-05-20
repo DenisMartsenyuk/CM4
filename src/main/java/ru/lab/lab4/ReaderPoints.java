@@ -1,6 +1,6 @@
 package ru.lab.lab4;
 
-import java.util.ArrayList;
+import ru.lab.lab4.entities.Points;
 
 public class ReaderPoints {
     private Points points;

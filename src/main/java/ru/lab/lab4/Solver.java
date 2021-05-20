@@ -1,5 +1,7 @@
 package ru.lab.lab4;
 
+import ru.lab.lab4.entities.Answer;
+import ru.lab.lab4.entities.Points;
 import ru.lab.lab4.solutions.*;
 
 import java.util.ArrayList;

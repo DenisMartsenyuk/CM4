@@ -1,4 +1,4 @@
-package ru.lab.lab4;
+package ru.lab.lab4.entities;
 
 import java.util.ArrayList;
 
@@ -11,7 +11,7 @@ public class Points {
         pointsY = new ArrayList<>();
     }
 
-    void addPoint(double x, double y) {
+    public void addPoint(double x, double y) {
         pointsX.add(x);
         pointsY.add(y);
     }

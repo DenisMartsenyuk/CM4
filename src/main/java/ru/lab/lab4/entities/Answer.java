@@ -1,4 +1,4 @@
-package ru.lab.lab4;
+package ru.lab.lab4.entities;
 
 import ru.lab.lab4.functions.Function;
 

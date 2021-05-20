@@ -5,6 +5,7 @@ import org.knowm.xchart.XYChart;
 import org.knowm.xchart.XYChartBuilder;
 import org.knowm.xchart.XYSeries;
 import org.knowm.xchart.style.Styler;
+import ru.lab.lab4.entities.Points;
 
 public class Painter {
     private XYChart chart;
@@ -21,7 +22,7 @@ public class Painter {
         chart.addSeries(name, points.getPointsX(), points.getPointsY());
     }
 
-    public void openGraph() { //todo мб переименовать
+    public void openGraph() {
         new SwingWrapper(chart).displayChart();
     }
 }
