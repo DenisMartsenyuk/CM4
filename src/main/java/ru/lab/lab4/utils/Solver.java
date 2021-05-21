@@ -12,7 +12,7 @@ public class Solver {
     private final Painter painter;
     private final ArrayList<Solution> solutions;
 
-    private final double OFFSET = 5.0;
+    private final double OFFSET = 1.0;
     private double minX;
     private double maxX;
 
@@ -30,9 +30,21 @@ public class Solver {
         painter.addPrimitive(points, "Points");
         minX = points.getMinX();
         maxX = points.getMaxX();
+
+        double minSigma = Double.MAX_VALUE;
+        String optimumFunctionName = "";
         for (Solution solution : solutions) {
-            parseAnswer(solution.solve(points));
+            Answer answer = solution.solve(points);
+            parseAnswer(answer);
+
+            if (minSigma >= answer.getSigma()) {
+                minSigma = answer.getSigma();
+                optimumFunctionName = answer.getFunction().getName();
+            }
         }
+
+        System.out.println("Наилучшая аппроксимирующая функция:");
+        System.out.println(optimumFunctionName);
 
         painter.openGraph();
     }
@@ -49,7 +61,11 @@ public class Solver {
     public Points getPointsForCurve(Function function) {
         Points points = new Points();
         for (double i = minX - OFFSET; i <= maxX + OFFSET; i += 0.5) {
-            points.addPoint(i, function.calcValue(i));
+            Double y = function.calcValue(i);
+            if (y.isNaN() || y.isInfinite()) {
+                continue;
+            }
+            points.addPoint(i, y);
         }
         return points;
     }

@@ -19,7 +19,9 @@ public class Painter {
     }
 
     public void addPrimitive(Points points, String name) {
-        chart.addSeries(name, points.getPointsX(), points.getPointsY());
+        if (points.getSize() > 0) {
+            chart.addSeries(name, points.getPointsX(), points.getPointsY());
+        }
     }
 
     public void openGraph() {

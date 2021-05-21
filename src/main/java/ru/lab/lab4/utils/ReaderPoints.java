@@ -38,10 +38,10 @@ public class ReaderPoints {
                 System.out.println("Введите количество точек. Точек должно быть не менее 12.");
             }
             int n = scanner.nextInt();
-//            if (n < 12) {
-//                System.out.println("Неверное количество точек.");
-//                System.exit(0);
-//            } //todo убрать
+            if (n < 12) {
+                System.out.println("Неверное количество точек.");
+                System.exit(0);
+            }
 
             if (isKeyboard) {
                 System.out.println("Введите координаты точек через пробел. По точке на строку. (x y)\n \"ВАЖНО! Точки надо вводить по возрастанию x.");

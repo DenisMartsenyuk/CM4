@@ -19,8 +19,8 @@ public class SolutionExponential extends Solution {
             double y = pointsY.get(i);
             SX += x;
             SXX += x * x;
-            SY += y;
-            SXY += x * y;
+            SY += Math.log(y);
+            SXY += x * Math.log(y);
         }
         double delta = SXX * n - SX * SX;
         double b = (SXY * n - SX * SY) / delta;
