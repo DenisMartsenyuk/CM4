@@ -4,7 +4,6 @@ import ru.lab.lab4.entities.Answer;
 import ru.lab.lab4.entities.Points;
 import ru.lab.lab4.functions.Function;
 import ru.lab.lab4.solutions.*;
-import ru.lab.lab4.utils.Painter;
 
 import java.util.ArrayList;
 
@@ -22,9 +21,9 @@ public class Solver {
         solutions = new ArrayList<>();
         solutions.add(new SolutionLinear());
         solutions.add(new SolutionSquare());
-//        solutions.add(new SolutionExponential());
-//        solutions.add(new SolutionLogarithm());
-//        solutions.add(new SolutionPower());
+        solutions.add(new SolutionExponential());
+        solutions.add(new SolutionLogarithm());
+        solutions.add(new SolutionPower());
     }
 
     public void solve(Points points) {
@@ -40,10 +39,9 @@ public class Solver {
 
     private void parseAnswer(Answer answer) {
         System.out.println(answer.getFunction().getName() + ":");
-        if (answer.getR() != null) {
-            System.out.println("Коэфициент пирсона: " + answer.getR()); //todo что-то с ним не так
-        }
-        System.out.println("Мера отклонения: " + answer.getS() + "\n");
+        System.out.println("Коэфициент пирсона: " + answer.getR()); //todo что-то с ним не так и может не выводить его у всех?
+        System.out.println("Мера отклонения: " + answer.getS());
+        System.out.println("Среднеквадратичное отклонение : " + answer.getSigma() + "\n");
         painter.addPrimitive(getPointsForCurve(answer.getFunction()), answer.getFunction().getName());
 
     }

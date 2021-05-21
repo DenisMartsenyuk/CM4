@@ -6,17 +6,30 @@ import ru.lab.lab4.functions.FunctionExponential;
 
 import java.util.ArrayList;
 
-public class SolutionExponential implements Solution {
+public class SolutionExponential extends Solution {
     @Override
     public Answer solve(Points points) {
-        Answer answer = new Answer();
+        ArrayList<Double> pointsX = points.getPointsX();
+        ArrayList<Double> pointsY = points.getPointsY();
+        double n = points.getSize();
 
-        ArrayList<Double> coef = new ArrayList<>();
-        coef.add(1.0);
-        coef.add(1.0);
+        double SX = 0, SXX = 0, SY = 0, SXY = 0;
+        for (int i = 0; i < n; ++i) {
+            double x = pointsX.get(i);
+            double y = pointsY.get(i);
+            SX += x;
+            SXX += x * x;
+            SY += y;
+            SXY += x * y;
+        }
+        double delta = SXX * n - SX * SX;
+        double b = (SXY * n - SX * SY) / delta;
+        double a = (SXX * SY - SX * SXY) / delta;
+        a = Math.exp(a);
 
-
-        answer.setFunction(new FunctionExponential(coef)); //todo сюды коэфициенты
-        return answer;
+        ArrayList<Double> coefficients = new ArrayList<>();
+        coefficients.add(a);
+        coefficients.add(b);
+        return getAnswer(points, new FunctionExponential(coefficients));
     }
 }
