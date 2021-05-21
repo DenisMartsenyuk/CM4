@@ -5,7 +5,7 @@ import ru.lab.lab4.functions.Function;
 public class Answer {
     private Function function;
     private double S;
-    private double r;
+    private Double r;
 
     public void setFunction(Function function) {
         this.function = function;
@@ -23,11 +23,11 @@ public class Answer {
         return S;
     }
 
-    public void setR(double r) {
+    public void setR(Double r) {
         this.r = r;
     }
 
-    public double getR() {
+    public Double getR() {
         return r;
     }
 }

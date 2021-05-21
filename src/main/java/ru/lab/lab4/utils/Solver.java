@@ -21,7 +21,7 @@ public class Solver {
         painter = new Painter();
         solutions = new ArrayList<>();
         solutions.add(new SolutionLinear());
-//        solutions.add(new SolutionSquare());
+        solutions.add(new SolutionSquare());
 //        solutions.add(new SolutionExponential());
 //        solutions.add(new SolutionLogarithm());
 //        solutions.add(new SolutionPower());
@@ -39,8 +39,11 @@ public class Solver {
     }
 
     private void parseAnswer(Answer answer) {
-        //todo вывести информацию промежуточную
-
+        System.out.println(answer.getFunction().getName() + ":");
+        if (answer.getR() != null) {
+            System.out.println("Коэфициент пирсона: " + answer.getR()); //todo что-то с ним не так
+        }
+        System.out.println("Мера отклонения: " + answer.getS() + "\n");
         painter.addPrimitive(getPointsForCurve(answer.getFunction()), answer.getFunction().getName());
 
     }
