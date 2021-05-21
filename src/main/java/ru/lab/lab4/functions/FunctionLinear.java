@@ -14,6 +14,6 @@ public class FunctionLinear extends Function {
 
     @Override
     public double calcValue(double x) { //ax + b
-        return coefficients.get(0) * x + coefficients.get(1); //todo а если не дабл
+        return coefficients.get(0) * x + coefficients.get(1);
     }
 }

@@ -14,6 +14,6 @@ public class FunctionExponential extends Function {
 
     @Override
     public double calcValue(double x) { //ae^(bx)
-        return coefficients.get(0) * Math.pow(Math.E, coefficients.get(1) * x); //todo проверить на дабл
+        return coefficients.get(0) * Math.pow(Math.E, coefficients.get(1) * x);
     }
 }

@@ -39,7 +39,7 @@ public class Solver {
     }
 
     private void parseAnswer(Answer answer) {
-        //todo отрисовать
+        //todo вывести информацию промежуточную
 
         painter.addPrimitive(getPointsForCurve(answer.getFunction()), answer.getFunction().getName());
 
