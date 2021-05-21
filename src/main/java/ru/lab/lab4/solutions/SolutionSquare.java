@@ -11,7 +11,12 @@ public class SolutionSquare implements Solution {
     public Answer solve(Points points) {
         Answer answer = new Answer();
 
-        answer.setFunction(new FunctionSquare(new ArrayList<>())); //todo коэфы
+        ArrayList<Double> coef = new ArrayList<>();
+        coef.add(1.0);
+        coef.add(1.0);
+        coef.add(1.0);
+
+        answer.setFunction(new FunctionSquare(coef)); //todo коэфы
         return answer;
     }
 }

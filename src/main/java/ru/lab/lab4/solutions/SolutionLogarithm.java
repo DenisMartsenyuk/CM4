@@ -11,7 +11,11 @@ public class SolutionLogarithm implements Solution{
     public Answer solve(Points points) {
         Answer answer = new Answer();
 
-        answer.setFunction(new FunctionLogarithm(new ArrayList<>())); //todo коэфы
+        ArrayList<Double> coef = new ArrayList<>();
+        coef.add(1.0);
+        coef.add(1.0);
+
+        answer.setFunction(new FunctionLogarithm(coef)); //todo коэфы
         return answer;
     }
 }

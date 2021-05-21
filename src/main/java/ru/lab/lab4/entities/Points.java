@@ -16,11 +16,23 @@ public class Points {
         pointsY.add(y);
     }
 
+    public int getSize() {
+        return pointsX.size();
+    }
+
     public ArrayList<Double> getPointsX() {
         return pointsX;
     }
 
     public ArrayList<Double> getPointsY() {
         return pointsY;
+    }
+
+    public double getMinX() {
+        return pointsX.get(0);
+    }
+
+    public double getMaxX() {
+        return pointsX.get(pointsX.size() - 1);
     }
 }

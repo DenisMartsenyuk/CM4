@@ -13,7 +13,7 @@ public class Painter {
     public Painter() {
         chart = new XYChartBuilder().width(600).height(400).title("Area Chart").xAxisTitle("X").yAxisTitle("Y").build();
         chart.getStyler().setChartTitleVisible(false);
-        chart.getStyler().setLegendPosition(Styler.LegendPosition.InsideSW);
+        chart.getStyler().setLegendPosition(Styler.LegendPosition.OutsideE);
         chart.getStyler().setDefaultSeriesRenderStyle(XYSeries.XYSeriesRenderStyle.Line);
         chart.getStyler().setMarkerSize(5);
     }

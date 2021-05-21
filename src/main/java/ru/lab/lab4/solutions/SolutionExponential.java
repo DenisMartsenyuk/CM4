@@ -11,7 +11,12 @@ public class SolutionExponential implements Solution {
     public Answer solve(Points points) {
         Answer answer = new Answer();
 
-        answer.setFunction(new FunctionExponential(new ArrayList<>())); //todo сюды коэфициенты
+        ArrayList<Double> coef = new ArrayList<>();
+        coef.add(1.0);
+        coef.add(1.0);
+
+
+        answer.setFunction(new FunctionExponential(coef)); //todo сюды коэфициенты
         return answer;
     }
 }

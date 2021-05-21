@@ -11,6 +11,10 @@ public class SolutionPower implements Solution {
     public Answer solve(Points points) {
         Answer answer = new Answer();
 
-        answer.setFunction(new FunctionPower(new ArrayList<>())); //todo коэфы
+        ArrayList<Double> coef = new ArrayList<>();
+        coef.add(1.0);
+        coef.add(1.0);
+
+        answer.setFunction(new FunctionPower(coef)); //todo коэфы
         return answer;    }
 }
